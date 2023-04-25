@@ -1,11 +1,14 @@
 package com.zsun.springboot;
 
 
+import org.apache.catalina.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * 主程序类;主配置类
@@ -25,6 +28,7 @@ public class MainApplication {
     public static void main(String[] args) {
         //1、返回我们IOC容器
         ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
+
 
         //2、查看容器里面的组件
         String[] names = run.getBeanDefinitionNames();
